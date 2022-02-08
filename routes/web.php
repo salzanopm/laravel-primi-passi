@@ -14,19 +14,42 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $data = [
-        'name' => 'Paolo',
-        'lastname' => 'Salzano',
-        'students' => [
-            'Maria Rossi',
-            'Filippo Verdi',
-            'Ernesto BIanchi'
-        ],
 
+    $data = [
+        'direction' => 'Aldo, Giovanni, Giacomo e Massimo Venier',
+        'year' => '1997'        
     ];
+
     return view('home', $data);
+
 })->name('homepage');
 
-Route::get('/chi-siamo', function() {
-    return view('about');
-})->name('about');
+Route::get('/i-tre-uomini', function() {
+
+    $data = [
+        'cast' => [
+            'Aldo Baglio',
+            'Giacomo Poretti',
+            'Giovanni Storti',
+            'la gamba'
+        ]
+    ];
+
+    return view('actors', $data);
+
+})->name('actors');
+
+Route::get('/la-gamba', function() {
+
+    $data = [
+        'cast' => [
+            'Aldo Baglio',
+            'Giacomo Poretti',
+            'Giovanni Storti',
+            'la gamba'
+        ]
+    ];
+
+    return view('leg', $data);
+
+})->name('leg');
